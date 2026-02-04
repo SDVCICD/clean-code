@@ -7,6 +7,7 @@ public class Caisse {
 
     private String nom;
     private List<Item> items;
+    private Integer poidMax;
 
     /**
      * Constructeur
@@ -17,6 +18,17 @@ public class Caisse {
         super();
         this.nom = nom;
         this.items = new ArrayList<>();
+        this.poidMax = 5;
+    }
+
+    /**
+     * Constructeur
+     *
+     * @param nom
+     */
+    public Caisse(String nom, Integer poidMax) {
+        this(nom);
+        this.poidMax = poidMax;
     }
 
     /**
@@ -53,6 +65,14 @@ public class Caisse {
      */
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public boolean canTake(Item item) {
+        return item.getPoids() <= this.poidMax;
+    }
+
+    public int getTaille (){
+        return this.items.size();
     }
 
 }
