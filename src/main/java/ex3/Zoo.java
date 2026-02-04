@@ -5,28 +5,24 @@ import java.util.List;
 public class Zoo {
 
     private String nom;
-    private List<String> types;
-    private List<String> noms;
-    private List<String> comportements;
+    private List<Animal> animals;
 
     public Zoo(String nom) {
         this.nom = nom;
     }
 
-    public void addAnimal(String nomAnimal, String typeAnimal, String comportement) {
-        types.add(typeAnimal);
-        noms.add(nomAnimal);
-        comportements.add(comportement);
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
     }
 
     public void afficherListeAnimaux() {
-        for (int i = 0; i < types.size(); i++) {
-            System.out.println(noms.get(i) + " " + types.get(i) + " " + comportements.get(i));
+        for (int i = 0; i < animals.size(); i++) {
+            System.out.println(animals.get(i).getNom() + " " + animals.get(i).getType() + " " + animals.get(i).getComportement());
         }
     }
 
     public int taille() {
-        return types.size();
+        return animals.size();
     }
 
     /**
