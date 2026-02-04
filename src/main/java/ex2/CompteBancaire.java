@@ -72,7 +72,8 @@ public class CompteBancaire {
             }
         } else if (type.equals("LA")) {
             if (this.solde - montant > 0) {
-                this.solde = solde - montant;
+                ajouterMontant(-montant);
+
             }
         }
     }
